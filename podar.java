@@ -4,7 +4,7 @@ import java.awt.event.*;
 
 //Класс для подарков
 class podar {
-    private Image img;
+    public Image img;
     public int x, y;
     public Boolean act;
     private Timer timerUpdate;
@@ -38,12 +38,10 @@ class podar {
     // Мет. осущест. движение подарка в низ
     public void vniz()
     {
-        if (act == true)
-        {
+        if (act == true) {
             y += 6;// Увеличеваем отступ
         }
-        if((y + img.getHeight(null)) >= 470) // Если подарок достиг пола
-        {
+        if((y + img.getHeight(null)) >= 470){ // Если подарок достиг пола
             timerUpdate.stop();
         }
     }

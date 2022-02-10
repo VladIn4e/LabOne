@@ -11,6 +11,8 @@ class pole extends JPanel
     public int x = 400;
     private int slogn;
     private podar[] gamePodar;
+    private Image end_game;
+    public Timer timerUpdate, timerDraw;
 
     public pole(int slogn)
     {
@@ -24,6 +26,11 @@ class pole extends JPanel
         try
         {
             fon = ImageIO.read(new File("c:\\fon.png"));
+        }
+        catch (IOException ex) {}
+
+        try {
+            end_game = ImageIO.read(new File("c:\\end_game.png"));
         }
         catch (IOException ex) {}
 
@@ -64,6 +71,18 @@ class pole extends JPanel
         for (int i = 0; i < 7; i++)
         {
             gamePodar[i].draw(gr);
+            if(gamePodar[i].act == true)
+            {
+                if((gamePodar[i].y + gamePodar[i].img.getHeight(null)) >= 470) {
+                    if(Math.abs(gamePodar[i].x - x) > 75){
+                        gr.drawImage(end_game, 300, 300, null);
+                        timerDraw.stop();
+                        timerUpdate.stop();
+                        break;
+                    }
+                    else gamePodar[i].act = false;
+                }
+            }
         }
     }
 

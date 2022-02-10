@@ -8,6 +8,7 @@ import java.net.PortUnreachableException;
 class okno extends JFrame
 {
     private pole gameP; // Закрытая Переменная класса - игровое поле
+    private int slogn; // Закрытая переменная сложности
 
     private class myKey implements KeyListener
     {
