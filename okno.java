@@ -53,3 +53,4 @@ class okno extends JFrame
         setVisible(true);
     }
 }
+//
