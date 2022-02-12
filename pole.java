@@ -57,8 +57,7 @@ class pole extends JPanel
             public void actionPerformed(ActionEvent e) {
                 repaint();
             }
-        }
-        );
+        });
         timerDraw.start();
     }
 
@@ -73,11 +72,11 @@ class pole extends JPanel
             gamePodar[i].draw(gr);
             if(gamePodar[i].act == true)
             {
-                if((gamePodar[i].y + gamePodar[i].img.getHeight(null)) >= 470) {
+                if((gamePodar[i].y + gamePodar[i].img.getHeight(null)) >= 600) {
                     if(Math.abs(gamePodar[i].x - x) > 75){
-                        gr.drawImage(end_game, 300, 300, null);
-                        timerDraw.stop();
-                        timerUpdate.stop();
+                        gr.drawImage(end_game, 0, 0, null);
+                        //timerUpdate.stop();
+                        //timerDraw.stop();
                         break;
                     }
                     else gamePodar[i].act = false;

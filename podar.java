@@ -8,6 +8,7 @@ class podar {
     public int x, y;
     public Boolean act;
     private Timer timerUpdate;
+    private float f = 7;
 
     public podar(Image img)
     {
@@ -39,9 +40,10 @@ class podar {
     public void vniz()
     {
         if (act == true) {
-            y += 6;// Увеличеваем отступ
+            y += f;// Увеличеваем отступ
+            f += 0.1;
         }
-        if((y + img.getHeight(null)) >= 470){ // Если подарок достиг пола
+        if((y + img.getHeight(null)) >= 600){ // Если подарок достиг пола
             timerUpdate.stop();
         }
     }
